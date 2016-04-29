@@ -1,6 +1,9 @@
 FROM alpine:edge
 MAINTAINER José Moreira <josemoreiravarzim@gmail.com>
 
+RUN apk --update add nginx bash && \
+    rm -fR /var/cache/apk/*
+
 ENV PUBLIC_PATH=/pub \
     NGINX_CONF=/etc/nginx/boot.conf \
     WORKER_CONNECTIONS=1024 \
@@ -15,9 +18,6 @@ ENV PUBLIC_PATH=/pub \
     CACHE_PUBLIC_EXPIRATION=1y
 
 ADD boot.sh /sbin/boot.sh
-
-RUN chmod +x /sbin/boot.sh && \
-    apk --update add nginx bash && \
-    rm -fR /var/cache/apk/*
+RUN chmod +x /sbin/boot.sh
 
 CMD [ "/sbin/boot.sh" ]
