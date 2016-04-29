@@ -10,6 +10,8 @@ ENV PUBLIC_PATH=/pub \
     \
     WORKER_CONNECTIONS=1024 \
     \
+    CHARSET="utf-8" \
+    \
     GZIP_TYPES="application/javascript application/x-javascript application/rss+xml text/javascript text/css image/svg+xml" \
     GZIP_LEVEL=6 \
     \

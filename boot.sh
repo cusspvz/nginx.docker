@@ -47,7 +47,7 @@ http {
 
     index index.html;
     autoindex off;
-    charset off;
+    charset $CHARSET;
 
     location ~* \.($CACHE_IGNORE)$ {
         add_header Cache-Control "no-store";

@@ -102,6 +102,11 @@ Sets the listening http port.
 **NOTE:** If you change this you will also to have sure you set the right port
 whenever you run a new container based on your image.
 
+### CHARSET
+#### Defaults to: `utf-8`
+
+**NOTE:** Change if this isn't the charset you're using.
+
 ### GZIP_TYPES
 #### Defaults to: `application/javascript application/x-javascript application/rss+xml text/javascript
 text/css image/svg+xml`
