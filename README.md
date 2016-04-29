@@ -28,7 +28,7 @@ couple it with your project.
 #### Create a *Dockerfile* based on the *latest* tag
 
 `Dockerfile`
-```
+```Dockerfile
 FROM cusspvz/nginx:latest
 MAINTAINER God <yolo@heaven.org>
 ```
@@ -43,7 +43,7 @@ Imagine that you have it under `public/` on the root of your project.
 Just set up your *Dockerfile* like this:
 
 `Dockerfile`
-```
+```Dockerfile
 FROM cusspvz/nginx:latest
 MAINTAINER God <yolo@heaven.org>
 
@@ -54,13 +54,13 @@ And you're ready to set!
 
 ### Building up the image
 
-```
+```Dockerfile
 docker build -t dockerusername/yolo .
 ```
 
 ### Executing it
 
-```
+```Dockerfile
 docker run -ti -p 80:80 dockerusername/yolo
 ```
 
@@ -71,7 +71,7 @@ You can use the `onbuild` tag **ONLY** if you have your public goods on `public/
 That is the only thing the `onbuild` does, adding a folder as `/pub`
 
 `Dockerfile`
-```
+```Dockerfile
 FROM cusspvz/nginx:onbuild
 MAINTAINER God <yolo@heaven.org>
 ```
