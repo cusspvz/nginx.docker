@@ -3,7 +3,12 @@
 :earth_americas: a 4MB alpine based nginx docker image, but carried with a
 configurable cache among other features
 
-## Another nginx image? Why?
+##### Built to be part of your project
+
+![nginx docker](https://s3.amazonaws.com/ejf3-public/hosted_files/ejf_io/docker_nginx.png)
+
+## Why?
+#### Why did you built a nginx/alpine image?
 
 Say WHAATT?? I search a lot, I really do, but unfortunatelly I like to customize
 things, get my hands dirty on and make things work. Unfortunatelly most of the
@@ -14,7 +19,7 @@ As so, I've developed an image which can grant you *TOTAL ACCESS* to the
 (Well, part of that its true, whenever you need something this doesn't have,
 create an Issue)
 
-## Built to be part of your project
+## Usage
 
 ### How to use it?
 I've provided an [hello world example] so you can easily understand how you can
@@ -30,7 +35,7 @@ MAINTAINER God <yolo@heaven.org>
 
 Easy right?
 
-### Now you must tell me where you have all the public stuff
+### Tell me where your public stuff is
 Computer isn't smart, yet, and I didn't developed an html/css/js auto-finder,
 so you must tell your image where you save the precious juice.
 
@@ -97,7 +102,7 @@ Sets the listening http port.
 **NOTE:** If you change this you will also to have sure you set the right port
 whenever you run a new container based on your image.
 
-### GZIP_TYPES`
+### GZIP_TYPES
 #### Defaults to: `application/javascript application/x-javascript application/rss+xml text/javascript
 text/css image/svg+xml`
 We already compress assets, if you have more assets you need to compress, please
@@ -115,7 +120,7 @@ We're ignoring cache for HTMLs because they are usually who target other assets.
 Feel free to set this empty in case you need to cache them.
 
 ### CACHE_PUBLIC
-#### Defaults to: `"ico|jpg|jpeg|png|gif|svg|js|jsx|css|less|swf|eot|ttf|otf|woff|woff2"`
+#### Defaults to: `ico|jpg|jpeg|png|gif|svg|js|jsx|css|less|swf|eot|ttf|otf|woff|woff2`
 All html assets should be cached, so you can have a fast website and a great SEO.
 
 ### CACHE_PUBLIC_EXPIRATION
