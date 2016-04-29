@@ -6,9 +6,9 @@ RUN apk --update add nginx bash && \
 
 ENV PUBLIC_PATH=/pub \
     NGINX_CONF=/etc/nginx/boot.conf \
-    WORKER_CONNECTIONS=1024 \
     HTTP_PORT=80 \
-    NGINX_CONF=/etc/nginx/mushed.conf \
+    \
+    WORKER_CONNECTIONS=1024 \
     \
     GZIP_TYPES="application/javascript application/x-javascript application/rss+xml text/javascript text/css image/svg+xml" \
     GZIP_LEVEL=6 \
