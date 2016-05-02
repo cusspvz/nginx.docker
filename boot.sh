@@ -49,6 +49,18 @@ http {
     autoindex off;
     charset $CHARSET;
 
+    add_header 'Access-Control-Allow-Origin' '$CORS_ALLOW_ORIGIN';
+    add_header 'Access-Control-Allow-Methods' '$CORS_ALLOW_METHODS';
+    add_header 'Access-Control-Allow-Headers' '$CORS_ALLOW_HEADERS';
+
+    # Tell client that this pre-flight info is valid for 20 days
+    if (\$request_method = 'OPTIONS') {
+      add_header 'Access-Control-Max-Age' 1728000;
+      add_header 'Content-Type' 'text/plain charset=UTF-8';
+      add_header 'Content-Length' 0;
+      return 204;
+    }
+
     location ~* \.($CACHE_IGNORE)$ {
         add_header Cache-Control "no-store";
         expires    off;
@@ -60,7 +72,6 @@ http {
     }
 
     try_files \$uri \$uri/ \$uri/index.html index.html;
-
   }
 }
 

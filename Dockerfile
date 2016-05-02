@@ -17,7 +17,12 @@ ENV PUBLIC_PATH=/pub \
     \
     CACHE_IGNORE=html \
     CACHE_PUBLIC="ico|jpg|jpeg|png|gif|svg|js|jsx|css|less|swf|eot|ttf|otf|woff|woff2" \
-    CACHE_PUBLIC_EXPIRATION=1y
+    CACHE_PUBLIC_EXPIRATION=1y \
+    \
+    CORS_ALLOW_ORIGIN="*" \
+    CORS_ALLOW_METHODS="GET, POST, OPTIONS" \
+    CORS_ALLOW_HEADERS="DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type"
+
 
 ADD boot.sh /sbin/boot.sh
 RUN chmod +x /sbin/boot.sh

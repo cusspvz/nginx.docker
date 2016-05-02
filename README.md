@@ -19,6 +19,11 @@ As so, I've developed an image which can grant you *TOTAL ACCESS* to the
 (Well, part of that its true, whenever you need something this doesn't have,
 create an Issue)
 
+## Features
+* Cache control
+* CORS headers as options
+* Enhanced for static content
+
 ## Usage
 
 ### How to use it?
@@ -108,8 +113,7 @@ whenever you run a new container based on your image.
 **NOTE:** Change if this isn't the charset you're using.
 
 ### GZIP_TYPES
-#### Defaults to: `application/javascript application/x-javascript application/rss+xml text/javascript
-text/css image/svg+xml`
+#### Defaults to: `application/javascript application/x-javascript application/rss+xml text/javascript text/css image/svg+xml`
 We already compress assets, if you have more assets you need to compress, please
 change this line. If you think I've missed some of them here, please PR the
 changes or open a new Issue! :)
@@ -133,6 +137,14 @@ All html assets should be cached, so you can have a fast website and a great SEO
 By default, I believe all your static assets should live, at least, for a year
 on your visitors computer. If you disagree, feel free to change.
 
+### CORS_ALLOW_ORIGIN
+#### Defaults to: `*`
+
+### CORS_ALLOW_METHODS
+#### Defaults to: `GET, POST, OPTIONS`
+
+### CORS_ALLOW_HEADERS
+#### Defaults to: `DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type`
 
 ## Final comments
 
