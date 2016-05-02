@@ -49,7 +49,8 @@ http {
     autoindex off;
     charset $CHARSET;
 
-    location / {
+    location ~* {
+
       add_header 'Access-Control-Allow-Origin' '$CORS_ALLOW_ORIGIN';
       add_header 'Access-Control-Allow-Methods' '$CORS_ALLOW_METHODS';
       add_header 'Access-Control-Allow-Headers' '$CORS_ALLOW_HEADERS';
