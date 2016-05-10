@@ -4,7 +4,9 @@ MAINTAINER José Moreira <josemoreiravarzim@gmail.com>
 RUN apk --update add nginx bash && \
     rm -fR /var/cache/apk/*
 
-ENV PUBLIC_PATH=/pub \
+ENV DEBUG="" \
+    \
+    PUBLIC_PATH=/pub \
     NGINX_CONF=/etc/nginx/boot.conf \
     HTTP_PORT=80 \
     \

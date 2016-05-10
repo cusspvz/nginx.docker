@@ -62,16 +62,16 @@ http {
         add_header 'Content-Length' 0;
         return 204;
       }
-    }
 
-    location ~* \.($CACHE_IGNORE)$ {
+      location ~* \.($CACHE_IGNORE)$ {
         add_header Cache-Control "no-store";
         expires    off;
-    }
+      }
 
-    location ~* \.($CACHE_PUBLIC)$ {
+      location ~* \.($CACHE_PUBLIC)$ {
         add_header Cache-Control "public";
         expires +$CACHE_PUBLIC_EXPIRATION;
+      }
     }
 
     try_files \$uri \$uri/ \$uri/index.html index.html;
