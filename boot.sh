@@ -45,12 +45,30 @@ http {
     listen $HTTP_PORT;
     root $PUBLIC_PATH;
 
-    index index.html;
+    index index.html index.htm;
     autoindex off;
     charset $CHARSET;
 
-    location ~* {
 
+    location ~* \.($CACHE_IGNORE)$ {
+      add_header 'Access-Control-Allow-Origin' '$CORS_ALLOW_ORIGIN';
+      add_header 'Access-Control-Allow-Methods' '$CORS_ALLOW_METHODS';
+      add_header 'Access-Control-Allow-Headers' '$CORS_ALLOW_HEADERS';
+
+      add_header Cache-Control "no-store";
+      expires    off;
+    }
+
+    location ~* \.($CACHE_PUBLIC)$ {
+      add_header 'Access-Control-Allow-Origin' '$CORS_ALLOW_ORIGIN';
+      add_header 'Access-Control-Allow-Methods' '$CORS_ALLOW_METHODS';
+      add_header 'Access-Control-Allow-Headers' '$CORS_ALLOW_HEADERS';
+
+      add_header Cache-Control "public";
+      expires +$CACHE_PUBLIC_EXPIRATION;
+    }
+
+    location ~* {
       add_header 'Access-Control-Allow-Origin' '$CORS_ALLOW_ORIGIN';
       add_header 'Access-Control-Allow-Methods' '$CORS_ALLOW_METHODS';
       add_header 'Access-Control-Allow-Headers' '$CORS_ALLOW_HEADERS';
@@ -61,16 +79,6 @@ http {
         add_header 'Content-Type' 'text/plain charset=UTF-8';
         add_header 'Content-Length' 0;
         return 204;
-      }
-
-      location ~* \.($CACHE_IGNORE)$ {
-        add_header Cache-Control "no-store";
-        expires    off;
-      }
-
-      location ~* \.($CACHE_PUBLIC)$ {
-        add_header Cache-Control "public";
-        expires +$CACHE_PUBLIC_EXPIRATION;
       }
     }
 
