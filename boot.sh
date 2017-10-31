@@ -48,7 +48,7 @@ http {
     index index.html index.htm;
     autoindex off;
     charset $CHARSET;
-
+    etag on;
 
     location ~* \.($CACHE_IGNORE)$ {
       add_header 'Access-Control-Allow-Origin' '$CORS_ALLOW_ORIGIN';
