@@ -20,7 +20,7 @@ As so, I've developed an image which can grant you *TOTAL ACCESS* to the
 create an Issue)
 
 ## Features
-* Cache control
+* Cache control as options (and always on eTag headers)
 * CORS headers as options
 * Enhanced for static content
 
