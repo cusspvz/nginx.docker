@@ -9,6 +9,7 @@ ENV DEBUG="" \
     PUBLIC_PATH=/pub \
     NGINX_CONF=/etc/nginx/boot.conf \
     HTTP_PORT=80 \
+    TRY_FILES="\$uri \$uri/ \$uri/index.html index.html" \
     \
     WORKER_CONNECTIONS=1024 \
     \
