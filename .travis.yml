@@ -9,8 +9,8 @@ script:
     docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD" &&
     docker build -t ${IMAGE}:latest . &&
     docker build -t ${IMAGE}:onbuild -f tags/onbuild/Dockerfile . &&
-    docker tag -t ${IMAGE}:latest ${IMAGE}:${TRAVIS_COMMIT:0:8}-latest &&
-    docker tag -t ${IMAGE}:onbuild ${IMAGE}:${TRAVIS_COMMIT:0:8}-onbuild &&
+    docker tag ${IMAGE}:latest ${IMAGE}:${TRAVIS_COMMIT:0:8}-latest &&
+    docker tag ${IMAGE}:onbuild ${IMAGE}:${TRAVIS_COMMIT:0:8}-onbuild &&
     docker push ${IMAGE} &&
     exit 0 || exit 1
 
