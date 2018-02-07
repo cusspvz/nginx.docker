@@ -82,7 +82,7 @@ http {
       }
     }
 
-    try_files \$uri \$uri/ \$uri/index.html index.html;
+    try_files $NGINX_TRY_FILES;
   }
 }
 
