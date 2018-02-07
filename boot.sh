@@ -45,10 +45,14 @@ http {
     listen $HTTP_PORT;
     root $PUBLIC_PATH;
 
+    try_files $TRY_FILES;
     index index.html index.htm;
+
     autoindex off;
     charset $CHARSET;
     etag on;
+
+    $CUSTOM_CONFIG
 
     location ~* \.($CACHE_IGNORE)$ {
       add_header 'Access-Control-Allow-Origin' '$CORS_ALLOW_ORIGIN';
@@ -81,8 +85,6 @@ http {
         return 204;
       }
     }
-
-    try_files $TRY_FILES;
   }
 }
 
