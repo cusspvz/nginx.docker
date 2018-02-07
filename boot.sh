@@ -82,7 +82,7 @@ http {
       }
     }
 
-    try_files $NGINX_TRY_FILES;
+    try_files $TRY_FILES;
   }
 }
 
