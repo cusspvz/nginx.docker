@@ -82,7 +82,7 @@ http {
       }
     }
 
-    try_files \$uri \$uri/ \$uri/index.html index.html;
+    try_files $TRY_FILES;
   }
 }
 

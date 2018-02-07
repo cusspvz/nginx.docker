@@ -107,6 +107,11 @@ Sets the listening http port.
 **NOTE:** If you change this you will also to have sure you set the right port
 whenever you run a new container based on your image.
 
+### TRY_FILES
+#### Defaults to: `$uri $uri/ $uri/index.html index.html`
+Allows you to change the file lookup order.
+Useful for setting up a specific page for a 404.
+
 ### CHARSET
 #### Defaults to: `utf-8`
 
